@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dog"
+            type="com.jonasrosendo.mvvmdogs.model.Dog" />
+
+        <variable
+            name="palette"
+            type="com.jonasrosendo.mvvmdogs.model.DogPalette" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@{palette.color}"
+        tools:context=".view.DetailFragment">
+
+        <ImageView
+            android:id="@+id/ivDetailsPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:imageUrl="@{dog.imageUrl}"
+            android:scaleType="fitCenter"
+            android:minHeight="200dp"/>
+
+        <TextView
+            android:id="@+id/tvDogName"
+            style="@style/titles"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/ivDetailsPhoto"
+            app:layout_constraintStart_toStartOf="@+id/ivDetailsPhoto"
+            app:layout_constraintTop_toBottomOf="@+id/ivDetailsPhoto"
+            tools:text="Dog Name"
+            android:text="@{dog.dogName}"/>
+
+        <TextView
+            android:id="@+id/tvDogPurpose"
+            style="@style/texts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvDogName"
+            app:layout_constraintStart_toStartOf="@+id/tvDogName"
+            app:layout_constraintTop_toBottomOf="@+id/tvDogName"
+            tools:text="@{dog.dogFor}" />
+
+        <TextView
+            android:id="@+id/tvDogTemperament"
+            style="@style/texts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvDogPurpose"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvDogPurpose"
+            app:layout_constraintTop_toBottomOf="@+id/tvDogPurpose"
+            tools:text="Dog Temperament"
+            android:text="@{dog.temperament}"/>
+
+        <TextView
+            android:id="@+id/tvDogLifespan"
+            style="@style/texts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/tvDogTemperament"
+            app:layout_constraintStart_toStartOf="@+id/tvDogTemperament"
+            app:layout_constraintTop_toBottomOf="@+id/tvDogTemperament"
+            tools:text="Dog Lifespan"
+            android:text="@{dog.lifespan}"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
