@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_listFragment_to_detailFragment"
             app:destination="@+id/detailFragment"/>
+        <action
+            android:id="@+id/action_listFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
 
     <fragment
@@ -31,5 +34,10 @@
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.jonasrosendo.mvvmdogs.view.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 
 </navigation>

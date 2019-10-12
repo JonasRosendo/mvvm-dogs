@@ -12,3 +12,4 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
 }
+
