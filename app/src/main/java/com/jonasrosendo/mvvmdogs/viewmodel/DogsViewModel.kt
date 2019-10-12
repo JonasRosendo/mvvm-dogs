@@ -29,6 +29,7 @@ class DogsViewModel(application: Application) : BaseViewModel(application) {
     val isLoading = MutableLiveData<Boolean>() //if isLoading
 
     fun refresh(){
+        checkCacheDuration()
         val updateTime = prefHelper.getUpdateTime()
         if(updateTime != null && updateTime != 0L && System.nanoTime() - updateTime < refreshTime){
             fetchFromDatabase()
