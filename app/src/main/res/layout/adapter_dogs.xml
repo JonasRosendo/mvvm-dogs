@@ -6,10 +6,10 @@
     <data>
         <variable
             name="dog"
-            type="com.jonasrosendo.mvvmdogs.model.Dog" />
+            type="com.jonasrosendo.mvvmdogs.model.model.Dog" />
         <variable
             name="listener"
-            type="com.jonasrosendo.mvvmdogs.view.DogClickListener" />
+            type="com.jonasrosendo.mvvmdogs.view.listeners.DogClickListener" />
     </data>
 
     <LinearLayout

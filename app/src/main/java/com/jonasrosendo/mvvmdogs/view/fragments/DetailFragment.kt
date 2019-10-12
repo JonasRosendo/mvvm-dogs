@@ -1,4 +1,4 @@
-package com.jonasrosendo.mvvmdogs.view
+package com.jonasrosendo.mvvmdogs.view.fragments
 
 
 import android.graphics.Bitmap
@@ -18,7 +18,8 @@ import com.bumptech.glide.request.transition.Transition
 
 import com.jonasrosendo.mvvmdogs.R
 import com.jonasrosendo.mvvmdogs.databinding.FragmentDetailBinding
-import com.jonasrosendo.mvvmdogs.model.DogPalette
+import com.jonasrosendo.mvvmdogs.model.model.DogPalette
+import com.jonasrosendo.mvvmdogs.view.DetailFragmentArgs
 import com.jonasrosendo.mvvmdogs.viewmodel.DogDetailsViewModel
 
 class DetailFragment : Fragment() {
@@ -33,6 +34,7 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        setHasOptionsMenu(true)
         dataBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail, container, false)
         return dataBinding.root
     }

@@ -3,9 +3,9 @@ package com.jonasrosendo.mvvmdogs.viewmodel
 import android.app.Application
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import com.jonasrosendo.mvvmdogs.model.Dog
-import com.jonasrosendo.mvvmdogs.model.DogDatabase
-import com.jonasrosendo.mvvmdogs.model.DogsApiService
+import com.jonasrosendo.mvvmdogs.model.model.Dog
+import com.jonasrosendo.mvvmdogs.model.data.local.DogDatabase
+import com.jonasrosendo.mvvmdogs.model.data.remote.DogsApiService
 import com.jonasrosendo.mvvmdogs.util.NotificationsHelper
 import com.jonasrosendo.mvvmdogs.util.SharedPreferencesHelper
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -20,7 +20,8 @@ class DogsViewModel(application: Application) : BaseViewModel(application) {
     private var prefHelper = SharedPreferencesHelper(getApplication())
     private var refreshTime = 5 * 60 * 1000 * 1000 * 1000L
 
-    private val dogsApiService = DogsApiService() //api instance
+    private val dogsApiService =
+        DogsApiService() //api instance
     private val disposable = CompositeDisposable() //allows us to observe the observable that api sent us
 
 

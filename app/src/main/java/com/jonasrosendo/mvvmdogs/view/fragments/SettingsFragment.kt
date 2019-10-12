@@ -1,4 +1,4 @@
-package com.jonasrosendo.mvvmdogs.view
+package com.jonasrosendo.mvvmdogs.view.fragments
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat

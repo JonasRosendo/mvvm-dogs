@@ -1,4 +1,4 @@
-package com.jonasrosendo.mvvmdogs.view
+package com.jonasrosendo.mvvmdogs.view.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +8,14 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.jonasrosendo.mvvmdogs.R
 import com.jonasrosendo.mvvmdogs.databinding.AdapterDogsBinding
-import com.jonasrosendo.mvvmdogs.model.Dog
+import com.jonasrosendo.mvvmdogs.model.model.Dog
+import com.jonasrosendo.mvvmdogs.view.listeners.DogClickListener
+import com.jonasrosendo.mvvmdogs.view.ListFragmentDirections
 import kotlinx.android.synthetic.main.adapter_dogs.view.*
 
 class AdapterDogs(private val dogList:ArrayList<Dog>) :
-    RecyclerView.Adapter<AdapterDogs.ViewHolder>(), DogClickListener {
+    RecyclerView.Adapter<AdapterDogs.ViewHolder>(),
+    DogClickListener {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -39,7 +42,8 @@ class AdapterDogs(private val dogList:ArrayList<Dog>) :
 
     override fun onDogClick(v: View) {
         val dogUuid = v.dogId.text.toString().toInt()
-        val action =  ListFragmentDirections.actionListFragmentToDetailFragment()
+        val action =
+            ListFragmentDirections.actionListFragmentToDetailFragment()
         action.dogUuid = dogUuid
         Navigation.findNavController(v).navigate(action)
     }

@@ -1,4 +1,4 @@
-package com.jonasrosendo.mvvmdogs.model
+package com.jonasrosendo.mvvmdogs.model.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

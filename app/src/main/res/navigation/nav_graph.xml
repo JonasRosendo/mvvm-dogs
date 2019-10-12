@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.jonasrosendo.mvvmdogs.view.ListFragment"
+        android:name="com.jonasrosendo.mvvmdogs.view.fragments.ListFragment"
         android:label="ListFragment">
         <action
             android:id="@+id/action_listFragment_to_detailFragment"
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.jonasrosendo.mvvmdogs.view.DetailFragment"
+        android:name="com.jonasrosendo.mvvmdogs.view.fragments.DetailFragment"
         android:label="DetailFragment">
         <action
             android:id="@+id/action_detailFragment_to_listFragment"
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.jonasrosendo.mvvmdogs.view.SettingsFragment"
+        android:name="com.jonasrosendo.mvvmdogs.view.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 

@@ -1,9 +1,10 @@
-package com.jonasrosendo.mvvmdogs.model
+package com.jonasrosendo.mvvmdogs.model.data.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.jonasrosendo.mvvmdogs.model.model.Dog
 
 @Database(entities = [Dog::class], version = 1, exportSchema = true)
 abstract class DogDatabase : RoomDatabase(){
@@ -14,8 +15,12 @@ abstract class DogDatabase : RoomDatabase(){
         @Volatile private var instance: DogDatabase? = null
         private val LOCK = Any()
 
-        operator fun invoke(context: Context) = instance ?: synchronized(LOCK) {
-            instance ?: buildDatabase(context).also {
+        operator fun invoke(context: Context) = instance
+            ?: synchronized(LOCK) {
+            instance
+                ?: buildDatabase(
+                    context
+                ).also {
                 instance = it
             }
         }

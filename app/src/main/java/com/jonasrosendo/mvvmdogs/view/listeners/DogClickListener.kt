@@ -1,4 +1,4 @@
-package com.jonasrosendo.mvvmdogs.view
+package com.jonasrosendo.mvvmdogs.view.listeners
 
 import android.view.View
 

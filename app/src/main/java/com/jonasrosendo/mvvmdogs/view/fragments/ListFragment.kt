@@ -1,4 +1,4 @@
-package com.jonasrosendo.mvvmdogs.view
+package com.jonasrosendo.mvvmdogs.view.fragments
 
 import android.os.Bundle
 import android.view.*
@@ -9,6 +9,8 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.jonasrosendo.mvvmdogs.R
+import com.jonasrosendo.mvvmdogs.view.ListFragmentDirections
+import com.jonasrosendo.mvvmdogs.view.adapters.AdapterDogs
 import com.jonasrosendo.mvvmdogs.viewmodel.DogsViewModel
 import kotlinx.android.synthetic.main.fragment_list.*
 
@@ -78,7 +80,8 @@ class ListFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
-            R.id.actionSettings -> view?.let { Navigation.findNavController(it).navigate(ListFragmentDirections.actionListFragmentToSettingsFragment()) }
+            R.id.actionSettings -> view?.let { Navigation.findNavController(it).navigate(
+                ListFragmentDirections.actionListFragmentToSettingsFragment()) }
         }
 
         return super.onOptionsItemSelected(item)
