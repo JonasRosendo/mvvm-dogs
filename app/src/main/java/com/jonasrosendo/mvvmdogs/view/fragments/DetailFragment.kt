@@ -4,10 +4,8 @@ package com.jonasrosendo.mvvmdogs.view.fragments
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -19,7 +17,7 @@ import com.bumptech.glide.request.transition.Transition
 import com.jonasrosendo.mvvmdogs.R
 import com.jonasrosendo.mvvmdogs.databinding.FragmentDetailBinding
 import com.jonasrosendo.mvvmdogs.model.model.DogPalette
-import com.jonasrosendo.mvvmdogs.view.DetailFragmentArgs
+import com.jonasrosendo.mvvmdogs.view.MainActivity
 import com.jonasrosendo.mvvmdogs.viewmodel.DogDetailsViewModel
 
 class DetailFragment : Fragment() {
@@ -28,6 +26,8 @@ class DetailFragment : Fragment() {
     private lateinit var viewModel: DogDetailsViewModel
 
     private lateinit var dataBinding: FragmentDetailBinding
+
+    var hasSmsStarted = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -79,5 +79,31 @@ class DetailFragment : Fragment() {
                     }
                 }
             })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_detail, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.actionSend -> {
+                hasSmsStarted = true
+                (activity as MainActivity).checkSmsPermission()
+
+            }
+
+            R.id.actionShare -> {
+
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
+    fun onPermissionResult(permissionGranted: Boolean){
+
     }
 }

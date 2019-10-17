@@ -9,7 +9,6 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.jonasrosendo.mvvmdogs.R
-import com.jonasrosendo.mvvmdogs.view.ListFragmentDirections
 import com.jonasrosendo.mvvmdogs.view.adapters.AdapterDogs
 import com.jonasrosendo.mvvmdogs.viewmodel.DogsViewModel
 import kotlinx.android.synthetic.main.fragment_list.*

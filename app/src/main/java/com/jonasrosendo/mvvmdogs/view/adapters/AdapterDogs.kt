@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jonasrosendo.mvvmdogs.R
 import com.jonasrosendo.mvvmdogs.databinding.AdapterDogsBinding
 import com.jonasrosendo.mvvmdogs.model.model.Dog
+import com.jonasrosendo.mvvmdogs.view.fragments.ListFragmentDirections
 import com.jonasrosendo.mvvmdogs.view.listeners.DogClickListener
-import com.jonasrosendo.mvvmdogs.view.ListFragmentDirections
 import kotlinx.android.synthetic.main.adapter_dogs.view.*
 
 class AdapterDogs(private val dogList:ArrayList<Dog>) :
