@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED){
             if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.SEND_SMS)){
                 AlertDialog.Builder(this)
-                    .setIcon(R.drawable.dog)
+                    .setCancelable(false)
                     .setTitle("Send SMS Permission")
                     .setMessage("This app requires access to send an SMS")
                     .setPositiveButton("Ask me"){dialogInterface, which ->
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     .setNegativeButton("No"){dialogInterface, which ->
                         notifyDetailFragmentPermissionGranted(false)
-                    }
+                    }.show()
             }else{
                 requestSmsPermission()
             }
