@@ -35,7 +35,7 @@ class DetailFragment : Fragment() {
 
     private lateinit var dataBinding: FragmentDetailBinding
 
-    var hasSmsStarted = false
+    private var hasSmsStarted = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
